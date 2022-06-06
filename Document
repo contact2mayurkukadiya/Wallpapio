@@ -1,0 +1,41 @@
+wallchamp keystoere file credentials : 
+--------------------------------------------
+name : wallchamp.keystore
+password : wallchamp
+alias name : wallchamp
+alias password : wallchamp
+name : mayur
+city : surat
+organization unit : thinkschamp
+organization name : thinkschamp
+state : gujarat
+country code : 91
+
+--------------------------------------------
+https://www.instamobile.io/android-development/generate-react-native-release-build-android/#comment-18925
+https://reactnative.dev/docs/signed-apk-android.html
+
+Build Failed Due to Resource Duplication error while build
+Error solution : https://stackoverflow.com/questions/53239705/react-native-error-duplicate-resources-android
+
+Run following command in project directory  (in bash terminal like git bash Otherwise rm command error will thrown)
+react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/build/intermediates/res/merged/release/ && rm -rf android/app/src/main/res/drawable-* && rm -rf android/app/src/main/res/raw/* && cd android && ./gradlew assembleRelease && cd ..
+
+--------------------------------------------
+npm install @react-navigation/native
+npm install @react-navigation/bottom-tabs
+npm install @react-navigation/drawer
+npm install @react-navigation/stack
+npm install react-native-reanimated react-native-gesture-handler react-native-screens react-native-safe-area-context @react-native-community/masked-view
+npm install --save react-native-vector-icons
+npm install react-native-fast-image
+npm install --save react-native-wallpaper-manager  (not in use)
+npm install @ajaybhatia/react-native-wallpaper-manager  (App is crash)
+npm install @react-native-community/async-storage@^1.8.0
+
+npm install react-native-manage-wallpaper   => working library from https://github.com/meharbhutta/react-native-manage-wallpaper
+npm install --save react-native-bottomsheet 
+npm install --save react-native-snap-carousel   => Not Installed
+npm install @react-native-community/cameraroll --save
+npm install react-native-sound --save   > https://stackoverflow.com/questions/37536960/react-native-play-sound-on-event
+npm install --save react-native-sqlite-storage
